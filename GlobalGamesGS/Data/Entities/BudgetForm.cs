@@ -2,7 +2,7 @@
 
 namespace GlobalGamesGS.Data.Entities
 {
-    public class BudgetForm
+    public class BudgetForm : IEntity
     {
         public int Id { get; set; }
 

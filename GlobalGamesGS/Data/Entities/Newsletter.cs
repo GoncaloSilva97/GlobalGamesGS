@@ -2,7 +2,7 @@
 
 namespace GlobalGamesGS.Data.Entities
 {
-    public class Newsletter
+    public class Newsletter : IEntity
     {
         public int Id { get; set; }
 

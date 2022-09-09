@@ -1,12 +1,24 @@
-﻿<section id="newsletter">
+﻿
+@model GlobalGamesGS.Data.Entities.Newsletter
+
+
+
+
+<section id="newsletter">
 		<div class="container">
-			<h1>Subscreve a nossa newsletter</h1>			
-			<form asp-action="Submit">
-            <input type="email" placeholder="Coloque o email..." />
-            <a asp-action="Home"  button type="submit" class="button_1">Subscrever</a>
+			<h1>Subscreve a nossa newsletter</h1>
+			<form asp-action="Submit" asp-controller="Home" >			
+				<span asp-validation-for="Email" class="text-warning"></span>
+				<button type="submit" class="button_1">Subscrever</button>
+				<input asp-for="Email" type="email" placeholder="Coloque o email..."/>
 			</form>
-
 		</div>
-
-
 </section>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
