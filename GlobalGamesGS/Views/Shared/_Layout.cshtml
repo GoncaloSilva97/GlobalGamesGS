@@ -8,6 +8,68 @@
     <link href="~/css2/style.css" rel="stylesheet"/>
 </head>
 <body>
+    <header>
+		
+		<div class="container">
+		
+			<div id="logo">
+				<h1><span class="destaque">Global</span> Games Enterprise</h1>
+			</div>
+			
+			<nav>
+
+				 <ul>
+					 <li class="nav-item">
+					  <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Home">Home</a>
+					 </li>
+					 <li class="nav-item">
+					 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+					 </li>
+					 <li class="nav-item">
+					  <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Servicos">Serviços</a>
+					 </li> 
+
+                     @if (this.User.Identity.IsAuthenticated)
+                            {
+                                 <li class="nav-item">
+                                     <a class="nav-link" asp-area="" asp-controller="Account" asp-action="ChangeUser">@this.User.Identity.Name</a>                        
+                                 </li>
+
+                                 <li class="nav-item">
+                                      <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                 </li>
+                     }
+                     else
+                     {
+                          <li class="nav-item">
+                                  <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                     
+                          </li>
+                     }
+
+
+				 </ul>
+
+			</nav>
+
+			
+			
+		</div>
+		
+		
+	</header>
+
+
+
+
+
+
+
+
+
+
+
+
     
     <div>
         <main role="main" class="pb-3">
